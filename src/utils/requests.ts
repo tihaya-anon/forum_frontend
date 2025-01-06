@@ -1,12 +1,11 @@
-// /src/utils/request.ts
 import axios, {
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
 } from "axios";
-import { StatusCode } from "../config/StatusCode";
-import { RestResp } from "../types/RestResp";
-import { BASE_URL } from "../config/api";
+import { StatusCode } from "@/config/StatusCode";
+import { RestResp } from "@/types/RestResp";
+import { BASE_URL } from "@/config/api";
 
 // 创建 axios 实例
 const request: AxiosInstance = axios.create({

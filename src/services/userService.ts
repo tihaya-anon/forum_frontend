@@ -1,12 +1,12 @@
-import type { UserAuthPhone } from "../types/vo/user/UserAuthPhone";
+import type { UserAuthPhone } from "@/types/vo/user/UserAuthPhone";
 import type {
   UserLogin,
   UserRegister,
   UserUpdate,
 } from "../types/vo/user";
-import type { AuthType } from "../types/AuthType";
-import { API } from "../config/api";
-import { get, post, patch, del } from "../utils/requests";
+import type { AuthType } from "@/types/AuthType";
+import { API } from "@/config/api";
+import { get, post, patch, del } from "@/utils/requests";
 
 const authPhone = async (data: UserAuthPhone) => {
   return await post<UserAuthPhone>(

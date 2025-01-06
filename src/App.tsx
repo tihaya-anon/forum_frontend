@@ -3,7 +3,7 @@ import {
   Space,
   message,
 } from "antd";
-import { userService } from "./services/userService";
+import { userService } from "@/services/userService";
 
 function App() {
   const testUserService = async () => {

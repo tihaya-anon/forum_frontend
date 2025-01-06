@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Select, message } from "antd";
-import { userService } from "../../../services/userService";
-import type { UserAuthPhone } from "../../../types/vo/user/UserAuthPhone";
+import { userService } from "@/services/userService";
+import type { UserAuthPhone } from "@/types/vo/user/UserAuthPhone";
 
 const AuthPhone: React.FC = () => {
   const [loading, setLoading] = useState(false);
