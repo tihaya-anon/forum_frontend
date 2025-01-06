@@ -1,12 +1,15 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.tsx";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ConfigProvider } from "antd";
+import App from "./App";
+import "antd/dist/reset.css";
 
-createRoot(
+ReactDOM.createRoot(
   document.getElementById("root")!
 ).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+  <React.StrictMode>
+    <ConfigProvider>
+      <App />
+    </ConfigProvider>
+  </React.StrictMode>
 );
