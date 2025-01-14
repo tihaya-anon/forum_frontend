@@ -2,6 +2,7 @@ import { mock } from "mockjs";
 import { API } from "@/config/api";
 import baseEndpoint from "./utils";
 import { StatusCode } from "@/config/StatusCode";
+import { UserPersist } from "@/types/vo/user";
 
 mock(baseEndpoint(API.USER.AUTH_TYPE), {
   code: StatusCode.SUCCESS,
@@ -26,5 +27,20 @@ mock(baseEndpoint(API.USER.REGISTER), (config) => {
     code: StatusCode.SUCCESS,
     msg: "success",
     data: {},
+  };
+});
+
+mock(baseEndpoint(API.USER.LOGIN), (config) => {
+  console.table(config.body);
+  const userPersist: UserPersist = {
+    username: "username",
+    id: 1,
+    school: "school",
+    token: "token",
+  };
+  return {
+    code: StatusCode.SUCCESS,
+    msg: "login success",
+    data: userPersist,
   };
 });

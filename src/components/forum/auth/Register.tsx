@@ -1,12 +1,18 @@
-import React from "react";
-import { Form, Input, Button, Select, message } from "antd";
-import { userService } from "@/services/userService";
 import type { UserAuthPhone } from "@/types/vo/user/UserAuthPhone";
-import useAsyncRequest from "@/hooks/useAsyncRequest";
 import type { AuthType } from "@/types/AuthType";
-import { UserRegister } from "@/types/vo/user";
+import type { UserRegister } from "@/types/vo/user";
+import type { FC, ReactNode } from "react";
 
-const Register: React.FC = () => {
+import React, { memo } from "react";
+import { Form, Input, Button, Select, message } from "antd";
+import useAsyncRequest from "@/hooks/useAsyncRequest";
+import { userService } from "@/services/userService";
+
+interface IProps {
+  children?: ReactNode;
+}
+
+const Register: FC<IProps> = () => {
   const [authPhoneForm] = Form.useForm();
   const [registerForm] = Form.useForm();
   const [authTypeOptions, setAuthTypeOptions] =
@@ -26,13 +32,13 @@ const Register: React.FC = () => {
     console.table(result);
     console.log(authPhone.error);
   };
-  const onRegisterFinish = async (values: {
+  const onRegisterFinish = async (data: {
     verifyCode: string;
   }) => {
     const registerData: UserRegister = {
       authType: authPhoneForm.getFieldValue("authType"),
       phone: authPhoneForm.getFieldValue("phone"),
-      verifyCode: values.verifyCode,
+      verifyCode: data.verifyCode,
       username: registerForm.getFieldValue("username"),
       password: registerForm.getFieldValue("password"),
       pubKey: registerForm.getFieldValue("pubKey"),
@@ -74,7 +80,7 @@ const Register: React.FC = () => {
 
         <Form.Item
           name="phone"
-          label="Phone Number"
+          label="Phone"
           rules={[
             {
               required: true,
@@ -182,4 +188,4 @@ const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default memo(Register);

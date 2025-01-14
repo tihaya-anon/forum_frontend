@@ -1,9 +1,7 @@
-import Register from "./components/forum/auth/Register";
+import AuthPage from "./pages/AuthPage";
 
 function App() {
-  return (
-    <Register />
-  )
+  return <AuthPage />;
 }
 
 export default App;
