@@ -14,14 +14,8 @@ const authPhone = async (data: UserAuthPhone) => {
     data
   );
 };
-const register = async (
-  data: UserRegister,
-  authType: string,
-  phone: string
-) => {
-  return await post<UserRegister>(API.USER.REGISTER, data, {
-    params: { authType, phone },
-  });
+const register = async (data: UserRegister) => {
+  return await post<UserRegister>(API.USER.REGISTER, data);
 };
 const login = async (data: UserLogin, authType: string) => {
   return await post<UserLogin>(API.USER.LOGIN, data, {

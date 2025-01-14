@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { ConfigProvider } from "antd";
 import App from "@/App";
 import "antd/dist/reset.css";
+import "@/mock";
 
 ReactDOM.createRoot(
   document.getElementById("root")!

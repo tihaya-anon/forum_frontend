@@ -2,7 +2,7 @@ import { RestResp } from "@/types/RestResp";
 import { useState } from "react";
 
 const useAsyncRequest = <TParams extends unknown[], TResult>(
-  asyncFunc: (...params: TParams) => Promise<RestResp<TResult>> // 异步函数接受多个参数，且参数类型为 TParams
+  asyncFunc: (...params: TParams) => Promise<RestResp<TResult>>
 ) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
