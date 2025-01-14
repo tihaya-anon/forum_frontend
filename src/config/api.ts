@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:8080"
+export const BASE_URL = "http://localhost:8080";
 export const API = {
   USER: {
     AUTH_PHONE: "/user/auth_phone",
@@ -13,5 +13,6 @@ export const API = {
     DELETE: "/post/:id",
     FILTER_AUTHOR: "/post/author/:id",
     FILTER_TAG: "/post/tag/:tag",
+    LIST_RECENT: "/post/list",
   },
-}
+};

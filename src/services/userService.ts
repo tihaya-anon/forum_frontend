@@ -3,7 +3,7 @@ import type {
   UserLogin,
   UserRegister,
   UserUpdate,
-} from "../types/vo/user";
+} from "@/types/vo/user";
 import type { AuthType } from "@/types/AuthType";
 import { API } from "@/config/api";
 import { get, post, patch, del } from "@/utils/requests";

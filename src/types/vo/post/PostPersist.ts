@@ -3,6 +3,7 @@ export type PostPersist = {
   title: string;
   tagList: string[];
   author: number;
+  username: string;
   commentCount: number;
   likes: number;
   dislikes: number;

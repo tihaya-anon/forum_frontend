@@ -1,1 +1,2 @@
 import "./userMock"
+import "./postMock"
