@@ -24,11 +24,19 @@ const AuthPage: FC<IProps> = () => {
   };
   return (
     <Layout>
-      <Header style={{color: "#fff"}}>
-        {title} <a onClick={toggleLogin}>{action}</a>
-      </Header>
-      <Content>{login ? <Login /> : <Register />}</Content>
-    </Layout>
+  <Header className="w-full text-white fixed top-0 left-0 right-0 z-10 bg-black">
+    <div className="flex justify-between items-center">
+      <div className="font-bold">{title}</div>
+      <a className="text-blue-300" onClick={toggleLogin}>
+        {action}
+      </a>
+    </div>
+  </Header>
+  <Content className="mt-16 px-8 py-8 overflow-auto">
+    {login ? <Login /> : <Register />}
+  </Content>
+</Layout>
+
   );
 };
 

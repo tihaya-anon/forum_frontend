@@ -4,6 +4,7 @@ import { ConfigProvider } from "antd";
 import App from "@/App";
 import "antd/dist/reset.css";
 import "@/mock";
+import "./styles/index.css";
 
 ReactDOM.createRoot(
   document.getElementById("root")!
