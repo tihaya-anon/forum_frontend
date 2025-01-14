@@ -6,7 +6,7 @@ import useAsyncRequest from "@/hooks/useAsyncRequest";
 import type { AuthType } from "@/types/AuthType";
 import { UserRegister } from "@/types/vo/user";
 
-const AuthPhone: React.FC = () => {
+const Register: React.FC = () => {
   const [authPhoneForm] = Form.useForm();
   const [registerForm] = Form.useForm();
   const [authTypeOptions, setAuthTypeOptions] =
@@ -182,4 +182,4 @@ const AuthPhone: React.FC = () => {
   );
 };
 
-export default AuthPhone;
+export default Register;

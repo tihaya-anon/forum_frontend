@@ -1,8 +1,8 @@
-import AuthPhone from "./components/forum/auth/AuthPhone";
+import Register from "./components/forum/auth/Register";
 
 function App() {
   return (
-    <AuthPhone />
+    <Register />
   )
 }
 
