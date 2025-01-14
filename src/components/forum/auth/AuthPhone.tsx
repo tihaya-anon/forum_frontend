@@ -1,24 +1,26 @@
-import React, { useState } from "react";
-import { Form, Input, Button, Select, message } from "antd";
+import React from "react";
+import { Form, Input, Button, Select } from "antd";
 import { userService } from "@/services/userService";
 import type { UserAuthPhone } from "@/types/vo/user/UserAuthPhone";
+import useAsyncRequest from "@/hooks/useAsyncRequest";
+import type { AuthType } from "@/types/AuthType";
 
 const AuthPhone: React.FC = () => {
-  const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
-
-  const onFinish = async (values: UserAuthPhone) => {
-    try {
-      setLoading(true);
-      await userService.authPhone(values);
-      message.success(
-        "Phone verification code sent successfully"
-      );
-    } catch (error) {
-      message.error((error as Error).message);
-    } finally {
-      setLoading(false);
-    }
+  const [authTypeOptions, setAuthTypeOptions] =
+    React.useState<AuthType[]>([]);
+  const authPhone = useAsyncRequest(userService.authPhone);
+  React.useEffect(() => {
+    const fetchAuthTypes = async () => {
+      const types = (await userService.authTypes()).data;
+      setAuthTypeOptions(types);
+    };
+    fetchAuthTypes();
+  }, []);
+  const onFinish = async (data: UserAuthPhone) => {
+    const result = await authPhone.request(data);
+    console.log(result);
+    console.log(authPhone.error);
   };
 
   return (
@@ -39,10 +41,14 @@ const AuthPhone: React.FC = () => {
         ]}
       >
         <Select>
-          <Select.Option value="SMS">SMS</Select.Option>
-          <Select.Option value="CALL">
-            Phone Call
-          </Select.Option>
+          {authTypeOptions.map((type) => (
+            <Select.Option
+              key={type.value}
+              value={type.value}
+            >
+              {type.label}
+            </Select.Option>
+          ))}
         </Select>
       </Form.Item>
 
@@ -67,7 +73,7 @@ const AuthPhone: React.FC = () => {
         <Button
           type="primary"
           htmlType="submit"
-          loading={loading}
+          loading={authPhone.loading}
         >
           Get Verification Code
         </Button>
