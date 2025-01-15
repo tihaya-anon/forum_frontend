@@ -2,7 +2,7 @@ import { mock } from "mockjs";
 import { API } from "@/config/api";
 import baseEndpoint from "./utils";
 import { StatusCode } from "@/config/StatusCode";
-import { UserPersist } from "@/types/vo/user";
+import type { UserPersist } from "#/vo/user";
 
 mock(baseEndpoint(API.USER.AUTH_TYPE), {
   code: StatusCode.SUCCESS,

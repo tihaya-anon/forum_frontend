@@ -1,6 +1,6 @@
+import type { PostPersist } from "#/vo/post";
 import type { FC, ReactNode } from "react";
 import { memo } from "react";
-import { PostPersist } from "@/types/vo/post";
 import {
   FaComment,
   FaThumbsUp,

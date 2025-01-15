@@ -1,10 +1,10 @@
-import type { UserAuthPhone } from "@/types/vo/user/UserAuthPhone";
+import type { UserAuthPhone } from "#/vo/user/UserAuthPhone";
 import type {
   UserLogin,
   UserRegister,
   UserUpdate,
-} from "@/types/vo/user";
-import type { AuthType } from "@/types/AuthType";
+} from "#/vo/user";
+import type { AuthType } from "#/AuthType";
 import { API } from "@/config/api";
 import { get, post, patch, del } from "@/utils/requests";
 

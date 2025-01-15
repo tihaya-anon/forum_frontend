@@ -1,6 +1,8 @@
-import type { UserAuthPhone } from "@/types/vo/user/UserAuthPhone";
-import type { AuthType } from "@/types/AuthType";
-import type { UserRegister } from "@/types/vo/user";
+import type {
+  UserAuthPhone,
+  UserRegister,
+} from "#/vo/user";
+import type { AuthType } from "#/AuthType";
 import type { FC, ReactNode } from "react";
 
 import React, { memo } from "react";

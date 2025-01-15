@@ -1,11 +1,11 @@
-import type { AuthType } from "@/types/AuthType";
+import type { AuthType } from "#/AuthType";
+import type { UserLogin } from "#/vo/user";
 import type { FC, ReactNode } from "react";
 
 import React, { memo } from "react";
 import { userService } from "@/services/userService";
 import { Button, Form, Input, message, Select } from "antd";
 import useAsyncRequest from "@/hooks/useAsyncRequest";
-import { UserLogin } from "@/types/vo/user";
 
 interface IProps {
   children?: ReactNode;

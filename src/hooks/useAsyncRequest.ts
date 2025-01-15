@@ -1,14 +1,18 @@
-import { RestResp } from "@/types/RestResp";
+import type { RestResp } from "#/RestResp";
 import { useState } from "react";
 
-const useAsyncRequest = <TParams extends unknown[], TResult>(
-  asyncFunc: (...params: TParams) => Promise<RestResp<TResult>>
+const useAsyncRequest = <
+  TParams extends unknown[],
+  TResult,
+>(
+  asyncFunc: (
+    ...params: TParams
+  ) => Promise<RestResp<TResult>>
 ) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-
-  const request= async (
+  const request = async (
     ...params: TParams
   ): Promise<RestResp<TResult> | null> => {
     setError(null);
