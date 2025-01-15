@@ -14,14 +14,14 @@ const DarkModeButton: FC<IProps> = () => {
       return (
         <FaMoon
           onClick={toggleDarkMode}
-          className="text-white text-lg"
+          className="text-white text-lg hover:cursor-pointer"
         />
       );
     } else {
       return (
         <FaSun
           onClick={toggleDarkMode}
-          className="text-white text-lg"
+          className="text-white text-lg hover:cursor-pointer"
         />
       );
     }

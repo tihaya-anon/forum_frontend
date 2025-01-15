@@ -9,13 +9,13 @@ import type { FC } from "react";
 
 interface IProps {
   children?: React.ReactNode;
-  section: "post" | "message" | "user";
+  section?: "post" | "message" | "user";
 }
 
 const MainFooter: FC<IProps> = ({ section }) => {
   const [selectedIcon, setSelectedIcon] = useState<
     string | null
-  >(section);
+  >(section || "post");
 
   const handleIconClick = (iconName: string) => {
     if (selectedIcon !== iconName) {

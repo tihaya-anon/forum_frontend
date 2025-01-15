@@ -1,8 +1,8 @@
+import CommonContent from "@/components/common/CommonContent";
 import CommonHeader from "@/components/common/CommonHeader";
+import CommonLayout from "@/components/common/CommonLayout";
 import Login from "@/components/forum/auth/Login";
 import Register from "@/components/forum/auth/Register";
-import { Layout } from "antd";
-import { Content } from "antd/es/layout/layout";
 import type { FC, ReactNode } from "react";
 import React, { memo } from "react";
 
@@ -24,7 +24,7 @@ const AuthPage: FC<IProps> = () => {
     });
   };
   return (
-    <Layout className="min-h-screen flex flex-col">
+    <CommonLayout>
       <CommonHeader>
         <div className="font-bold text-white">{title}</div>
         <a
@@ -34,10 +34,10 @@ const AuthPage: FC<IProps> = () => {
           {action}
         </a>
       </CommonHeader>
-      <Content className="mt-16 px-8 py-8 overflow-auto flex-grow">
+      <CommonContent>
         {login ? <Login /> : <Register />}
-      </Content>
-    </Layout>
+      </CommonContent>
+    </CommonLayout>
   );
 };
 

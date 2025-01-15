@@ -1,6 +1,7 @@
+import CommonContent from "@/components/common/CommonContent";
+import CommonLayout from "@/components/common/CommonLayout";
 import MainFooter from "@/components/common/MainFooter";
-import { Layout } from "antd";
-import { Content, Header } from "antd/es/layout/layout";
+import PostHeader from "@/layout/post/PostHeader";
 import React, { memo } from "react";
 import type { FC, ReactNode } from "react";
 
@@ -10,11 +11,11 @@ interface IProps {
 
 const MainPage: FC<IProps> = () => {
   return (
-    <Layout>
-      <Header className="w-full fixed top-0 left-0 right-0 z-10 bg-black"></Header>
-      <Content></Content>
-      <MainFooter section="post"/>
-    </Layout>
+    <CommonLayout>
+      <PostHeader />
+      <CommonContent></CommonContent>
+      <MainFooter />
+    </CommonLayout>
   );
 };
 
