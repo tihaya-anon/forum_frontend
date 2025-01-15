@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import type { FC, ReactNode } from "react";
 import { Header } from "antd/es/layout/layout";
-import DarkModeButton from "./DarkModeButton";
+import DarkModeButton from "../components/common/DarkModeButton";
 
 interface IProps {
   children?: ReactNode;

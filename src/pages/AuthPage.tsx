@@ -1,6 +1,6 @@
-import CommonContent from "@/components/common/CommonContent";
-import CommonHeader from "@/components/common/CommonHeader";
-import CommonLayout from "@/components/common/CommonLayout";
+import CommonContent from "@/layout/CommonContent";
+import CommonHeader from "@/layout/CommonHeader";
+import CommonLayout from "@/layout/CommonLayout";
 import Login from "@/components/forum/auth/Login";
 import Register from "@/components/forum/auth/Register";
 import type { FC, ReactNode } from "react";

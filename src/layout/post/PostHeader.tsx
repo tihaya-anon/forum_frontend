@@ -1,4 +1,4 @@
-import CommonHeader from "@/components/common/CommonHeader";
+import CommonHeader from "@/layout/CommonHeader";
 import React, { memo } from "react";
 import type { FC, ReactNode } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";

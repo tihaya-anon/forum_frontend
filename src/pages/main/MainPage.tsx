@@ -1,5 +1,5 @@
-import CommonContent from "@/components/common/CommonContent";
-import CommonLayout from "@/components/common/CommonLayout";
+import CommonContent from "@/layout/CommonContent";
+import CommonLayout from "@/layout/CommonLayout";
 import MainFooter from "@/components/common/MainFooter";
 import PostHeader from "@/layout/post/PostHeader";
 import React, { memo } from "react";
