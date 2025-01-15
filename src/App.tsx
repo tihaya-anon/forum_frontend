@@ -16,13 +16,14 @@ function App() {
         })
       ).data;
       setPosts(res);
+      console.log(res.map(post=>post.createAt))
     };
     fetchPosts();
   }, []);
   return (
     <>
       {posts.map((post) => (
-        <PostCard post={post} />
+        <PostCard key={post.id} post={post} />
       ))}
     </>
   );

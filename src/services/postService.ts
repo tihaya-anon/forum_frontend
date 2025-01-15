@@ -4,10 +4,11 @@ import { get } from "@/utils/requests";
 import { PostPersist } from "@/types/vo/post";
 
 const listRecent = async (data: PageReq) => {
-  return await get<PageReq, PostPersist[]>(
+  const res= await get<PageReq, PostPersist[]>(
     API.POST.LIST_RECENT,
     data
   );
+  return res;
 };
 
 export const postService = { listRecent };
