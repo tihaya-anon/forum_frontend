@@ -41,6 +41,7 @@ const Login: FC<IProps> = () => {
         name="login"
         onFinish={onLoginFinish}
         layout="vertical"
+        className="h-100%"
       >
         <Form.Item
           name="authType"

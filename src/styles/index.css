@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  @apply bg-second-white; /* 默认背景颜色 */
+  @apply bg-white; /* 默认背景颜色 */
 }
 body::-webkit-scrollbar {
   display: none;
