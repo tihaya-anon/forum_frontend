@@ -5,7 +5,6 @@ import MainPage from "./pages/main/MainPage";
 function App() {
   const { darkMode } = useDarkMode();
   return (
-    <>
       <ConfigProvider
         theme={{
           algorithm: darkMode
@@ -15,7 +14,6 @@ function App() {
       >
         <MainPage />
       </ConfigProvider>
-    </>
   );
 }
 
