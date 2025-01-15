@@ -9,13 +9,11 @@ import {
   FaUser,
   FaClock,
 } from "react-icons/fa"; // 导入所需的图标
-import { stringify } from "querystring";
 
 interface IProps {
   children?: ReactNode;
   post: PostPersist;
 }
-
 const PostCard: FC<IProps> = ({ post }) => {
   const currentDate = new Date();
   const createDate = new Date(post.createAt);
@@ -40,6 +38,7 @@ const PostCard: FC<IProps> = ({ post }) => {
     formattedDate = `${HOURS} ${AMPM}`;
     return formattedDate;
   };
+
   const padZero = (num: number) =>
     num < 10 ? `0${num}` : `${num}`;
   let formattedDate = "";
@@ -47,8 +46,9 @@ const PostCard: FC<IProps> = ({ post }) => {
   formattedDate = isToday
     ? hours
     : `${createDate.getFullYear()}/${padZero(createDate.getMonth() + 1)}/${padZero(createDate.getDate())} ${hours}`;
+
   return (
-    <div className="bg-white p-5 rounded-lg shadow-lg max-w-xl mx-auto my-4">
+    <div className="bg-white dark:bg-gray-800 dark:text-white p-5 rounded-lg shadow-lg max-w-xl mx-auto my-4">
       {/* Title */}
       <div className="text-2xl font-bold mb-4">
         {post.title}
@@ -59,7 +59,7 @@ const PostCard: FC<IProps> = ({ post }) => {
         {post.tagList.map((tag, index) => (
           <span
             key={index}
-            className="bg-gray-200 text-gray-800 py-1 px-3 rounded-full text-sm"
+            className="bg-theme-base-200 dark:bg-gray-700 text-gray-800 dark:text-white py-1 px-3 rounded-full text-sm"
           >
             {tag}
           </span>
@@ -67,7 +67,7 @@ const PostCard: FC<IProps> = ({ post }) => {
       </div>
 
       {/* Created At and Username */}
-      <div className="flex justify-between text-sm text-gray-600 mb-4">
+      <div className="flex justify-between text-sm text-theme-base-600 dark:text-gray-400 mb-4">
         {/* Created At Icon (on the left) */}
         <div className="flex items-center space-x-1">
           {isToday ? (
@@ -86,7 +86,7 @@ const PostCard: FC<IProps> = ({ post }) => {
       </div>
 
       {/* Data: Comment count, Likes, Dislikes */}
-      <div className="flex justify-between text-gray-600">
+      <div className="flex justify-between text-theme-base-600 dark:text-gray-400">
         <div className="flex items-center space-x-1">
           <FaThumbsUp className="text-sm" />
           <span>{post.likes}</span>
