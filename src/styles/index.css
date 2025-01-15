@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  @apply bg-second-white; /* 默认背景颜色 */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+/* 适应黑暗模式 */
+.dark body {
+  @apply bg-theme-base-900; /* 黑暗模式下的背景颜色 */
+}
