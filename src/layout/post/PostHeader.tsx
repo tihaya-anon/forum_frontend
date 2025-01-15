@@ -11,8 +11,7 @@ const PostHeader: FC<IProps> = () => {
   return (
     <CommonHeader>
       <FaMagnifyingGlass
-        size={24}
-        className="text-white font-bold"
+        className="text-white font-bold h-full"
       />
     </CommonHeader>
   );

@@ -22,5 +22,6 @@
     "vo": "Enum",
     "dto": "Enum",
     "store": "Store"
-  }
+  },
+  "material-icon-theme.hidesExplorerArrows": true
 }

@@ -12,8 +12,8 @@ const CommonHeader: FC<IProps> = ({ children }) => {
   const childArray = React.Children.toArray(children);
 
   return (
-    <Header className="w-full fixed top-0 left-0 right-0 z-10 bg-black">
-      <div className="flex justify-between items-center w-full">
+    <Header className="w-full fixed top-0 left-0 right-0 z-10 bg-black h-[10vh]">
+      <div className="flex justify-between items-center w-full h-full">
         {/* DarkModeButton 在最左边 */}
         <DarkModeButton />
 
