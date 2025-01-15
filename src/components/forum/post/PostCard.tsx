@@ -47,57 +47,65 @@ const PostCard: FC<IProps> = ({ post }) => {
     ? hours
     : `${createDate.getFullYear()}/${padZero(createDate.getMonth() + 1)}/${padZero(createDate.getDate())} ${hours}`;
 
-  return (
-    <div className="bg-white dark:bg-gray-800 dark:text-white p-5 rounded-lg shadow-lg max-w-xl mx-auto my-4">
-      {/* Title */}
-      <div className="text-2xl font-bold mb-4">
-        {post.title}
-      </div>
+  const rowStyle = "flex items-center space-x-1";
 
+  return (
+    <div className="bg-white dark:bg-theme-base-900 dark:text-white px-5 py-2 rounded-lg shadow-lg max-w-xl mx-auto my-4">
       {/* Tag List */}
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className={`flex flex-wrap gap-2 mb-3`}>
         {post.tagList.map((tag, index) => (
           <span
             key={index}
-            className="bg-theme-base-200 dark:bg-gray-700 text-gray-800 dark:text-white py-1 px-3 rounded-full text-sm"
+            className="bg-blue-100 dark:bg-theme-base-700 text-gray-800 dark:text-white py-1 px-3 rounded-full text-xs"
           >
             {tag}
           </span>
         ))}
       </div>
 
+      {/* Title */}
+      <div
+        className={`text-${post.title.length > 10 ? "base" : "xl"} font-${post.title.length > 10 ? "normal" : "bold"} mb-2.5`}
+      >
+        {post.title.slice(0, 75) +
+          (post.title.length > 75 ? "..." : "")}
+      </div>
+
       {/* Created At and Username */}
-      <div className="flex justify-between text-sm text-theme-base-600 dark:text-gray-400 mb-4">
+      <div
+        className={`flex justify-between text-sm text-theme-base-600 dark:text-theme-base-500 mb-2.5`}
+      >
         {/* Created At Icon (on the left) */}
-        <div className="flex items-center space-x-1">
+        <div className={rowStyle}>
           {isToday ? (
-            <FaClock className="text-sm" />
+            <FaClock className="text-xs" />
           ) : (
-            <FaCalendarAlt className="text-sm" />
+            <FaCalendarAlt className="text-xs" />
           )}
           <span>{formattedDate}</span>
         </div>
 
         {/* Author Icon (on the right) */}
-        <div className="flex items-center space-x-1">
-          <FaUser className="text-sm" />
+        <div className={rowStyle}>
+          <FaUser className="text-xs" />
           <span>{post.username}</span>
         </div>
       </div>
 
       {/* Data: Comment count, Likes, Dislikes */}
-      <div className="flex justify-between text-theme-base-600 dark:text-gray-400">
-        <div className="flex items-center space-x-1">
-          <FaThumbsUp className="text-sm" />
-          <span>{post.likes}</span>
+      <div className="flex justify-between text-theme-base-600 dark:text-theme-base-300">
+        <div className={rowStyle}>
+          <FaComment className="text-sm" />
+          <span>{post.commentCount}</span>
         </div>
-        <div className="flex items-center space-x-1">
+        <div className={rowStyle}>
           <FaThumbsDown className="text-sm" />
           <span>{post.dislikes}</span>
         </div>
-        <div className="flex items-center space-x-1">
-          <FaComment className="text-sm" />
-          <span>{post.commentCount}</span>
+
+        <div className={rowStyle}>
+          <FaThumbsUp className="text-sm" />
+          <span>{post.likes}</span>
         </div>
       </div>
     </div>

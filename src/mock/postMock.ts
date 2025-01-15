@@ -7,7 +7,7 @@ const regex = new RegExp(
   baseEndpoint(API.POST.LIST_RECENT) +
     "\\?pageIdx=\\d+&pageSize=\\d+"
 );
-const getRandomDate = ()=>{
+const getRandomDate = () => {
   const startTimestamp = new Date("2025-01-13").getTime();
   const endTimestamp = new Date("2025-01-16").getTime();
 
@@ -29,8 +29,8 @@ const getRandomDate = ()=>{
       .toISOString()
       .split("T")[1]
       .split(".")[0];
-      return randomDate;
-}
+  return randomDate;
+};
 mock(regex, () => {
   // 返回 mock 数据
   return {
@@ -41,7 +41,7 @@ mock(regex, () => {
     }).map(() => {
       return {
         id: Random.increment(100),
-        title: Random.ctitle(),
+        title: Random.ctitle(5, 125),
         tagList: Array.from({
           length: Random.integer(3, 6),
         }).map(() => Random.cword(1, 3)),

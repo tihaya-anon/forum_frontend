@@ -24,8 +24,8 @@ const MainFooter: FC<IProps> = ({ section }) => {
   };
 
   return (
-    <Footer className="bg-black text-white py-4">
-      <div className="flex justify-between items-center w-100%">
+    <Footer className="w-full fixed bottom-0 left-0 right-0 z-10 bg-black text-white h-[8vh]">
+      <div className="flex justify-between items-center w-full h-full">
         <FaNewspaper
           size={24}
           className={`cursor-pointer ${selectedIcon === "post" ? "text-primary" : "hover:text-gray-400"}`}

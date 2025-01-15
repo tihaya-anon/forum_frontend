@@ -8,7 +8,7 @@ interface IProps {
 
 const CommonContent: FC<IProps> = ({ children }) => {
   return (
-    <Content className="mt-16 px-8 py-8 overflow-auto flex-grow">
+    <Content className="my-5 px-8 py-8 overflow-auto flex-grow">
       {children}
     </Content>
   );
