@@ -6,21 +6,23 @@ import {
   FaUser,
 } from "react-icons/fa";
 import type { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
   children?: React.ReactNode;
-  section?: "post" | "message" | "user";
+  section: string;
 }
 
 const MainFooter: FC<IProps> = ({ section }) => {
-  const [selectedIcon, setSelectedIcon] = useState<
-    string | null
-  >(section || "post");
+  const [selectedIcon, setSelectedIcon] =
+    useState<string>(section);
+  const navigate = useNavigate();
 
-  const handleIconClick = (iconName: string) => {
-    if (selectedIcon !== iconName) {
-      setSelectedIcon(iconName);
+  const handleIconClick = (path: string) => {
+    if (selectedIcon !== path) {
+      setSelectedIcon(path);
     }
+    navigate(`/${path}`);
   };
 
   return (
