@@ -9,21 +9,21 @@ interface IProps {
 
 const DarkModeButton: FC<IProps> = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
-    if (darkMode) {
-      return (
-        <FaSun
-          onClick={toggleDarkMode}
-          className="text-white text-lg hover:cursor-pointer"
-        />
-      );
-    } else {
-      return (
-        <FaMoon
-          onClick={toggleDarkMode}
-          className="text-white text-lg hover:cursor-pointer"
-        />
-      );
-    }
+  if (darkMode) {
+    return (
+      <FaSun
+        onClick={toggleDarkMode}
+        className="text-white text-lg hover:cursor-pointer"
+      />
+    );
+  } else {
+    return (
+      <FaMoon
+        onClick={toggleDarkMode}
+        className="text-white text-lg hover:cursor-pointer"
+      />
+    );
+  }
 };
 
 export default memo(DarkModeButton);

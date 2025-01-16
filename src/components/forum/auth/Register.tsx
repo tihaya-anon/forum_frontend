@@ -57,6 +57,7 @@ const Register: FC<IProps> = () => {
         name="auth-phone"
         onFinish={onAuthPhoneFinish}
         layout="vertical"
+        className="pt-5"
       >
         <Form.Item
           name="authType"

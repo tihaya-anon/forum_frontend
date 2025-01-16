@@ -1,7 +1,7 @@
 import React from "react";
 import { ConfigProvider, theme } from "antd";
 import { useDarkMode } from "@/hooks/useDarkMode";
-import Routes from "@/routes";
+import PageRoutes from "@/routes";
 function App() {
   const { darkMode } = useDarkMode();
   return (
@@ -12,7 +12,7 @@ function App() {
           : theme.defaultAlgorithm,
       }}
     >
-      <Routes />
+      <PageRoutes />
     </ConfigProvider>
   );
 }
